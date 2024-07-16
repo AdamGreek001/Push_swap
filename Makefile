@@ -2,9 +2,9 @@ FILE = tools.c
 
 NAME = push_swap
 
-CC = gcc
+CC = cc
 
-FLAGS = -Wall -Wextra -Werror
+#FLAGS = -Wall -Wextra -Werror
 
 SRCS =  Push_swap.c checking.c ft_split.c indexing.c instr_push.c instr_rev_rot.c instr_rotate.c \
 			instrctions_swap.c linked_list/lists.c sorting.c tools.c tools2.c algo.c

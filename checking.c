@@ -116,7 +116,10 @@ char	*ft_strjoin_av(int ac, char **str, t_stack **a)
 		{
 			if (!is_valid(tmp[j]) || !ft_lstadd_back(a,
 					ft_lstnew(ft_atoi(tmp[j]))))
+            {
+                write(2, "Error\n", 6);
 				return (free_2d(tmp), my_exit(a, 1), NULL);
+            }
 		}
 		free_2d(tmp);
 		i++;
