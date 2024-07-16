@@ -62,13 +62,13 @@ int					find_min(t_stack *a);
 char				ft_putstr_fd(char *s, int fd);
 int					ft_list_size(t_stack *lst);
 char				*ft_strjoin_av(int ac, char **str, t_stack **a);
-void	*ft_memset(void *b, int c, size_t len);
+void				*ft_memset(void *b, int c, size_t len);
 void				*ft_calloc(size_t count, size_t size);
-size_t	ft_strlen(const char *s);
-size_t	ft_strlcpy(char *dest, const char *src, size_t size);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-void	push_to_b(t_stack **a, t_stack **b);
-void	push_sort_to_a(t_stack **a, t_stack **b);
-int	is_sorted(t_stack *a);
+size_t				ft_strlen(const char *s);
+size_t				ft_strlcpy(char *dest, const char *src, size_t size);
+char				*ft_substr(char const *s, unsigned int start, size_t len);
+void				push_to_b(t_stack **a, t_stack **b);
+void				push_sort_to_a(t_stack **a, t_stack **b);
+int					is_sorted(t_stack *a);
 
 #endif

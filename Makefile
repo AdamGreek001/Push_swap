@@ -9,7 +9,7 @@ FLAGS = -Wall -Wextra -Werror
 SRCS =  Push_swap.c checking.c ft_split.c indexing.c instr_push.c instr_rev_rot.c instr_rotate.c \
 			instrctions_swap.c linked_list/lists.c sorting.c tools.c tools2.c algo.c
 
-OBJS = ${SRCS:%.c=%.o}
+OBJS = ${SRCS:.c=.o}
 
 ${NAME} : ${OBJS}
 	${CC} $(FLAGS) $(OBJS) -o $(NAME)

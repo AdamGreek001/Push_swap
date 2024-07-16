@@ -6,7 +6,7 @@
 /*   By: eel-alao <eel-alao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 08:02:09 by eel-alao          #+#    #+#             */
-/*   Updated: 2024/07/16 08:50:57 by eel-alao         ###   ########.fr       */
+/*   Updated: 2024/07/16 09:38:19 by eel-alao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,41 +65,32 @@ void	push_to_b(t_stack **a, t_stack **b)
 	sort_3(a);
 }
 
+int	algo_norm(t_stack **a, t_stack **b, int max)
+{
+	if ((*b)->index == (*a)->index - 1)
+		return (pa(a, b), 0);
+	else if (ft_lstlast(*b)->index == (*a)->index - 1)
+		return (rrb(b, 1), pa(a, b), 0);
+	else if (ft_lstlast(*a)->index == max)
+		return (pa(a, b), ra(a, 1), 0);
+	else if (*b && ft_lstlast(*a)->index < (*b)->index)
+		return (pa(a, b), ra(a, 1), 0);
+	else if (*b && ft_lstlast(*a)->index < ft_lstlast(*b)->index)
+		return (rrb(b, 1), pa(a, b), ra(a, 1), 0);
+	else if (ft_lstlast(*a)->index == (*a)->index - 1)
+		return (rra(a, 1), 0);
+	else if (*b && search_for_index(*b, (*a)->index - 1))
+		return (rrb(b, 1), 0);
+	else
+		return (rb(b, 1), 0);
+	return (1);
+}
+
 void	push_sort_to_a(t_stack **a, t_stack **b)
 {
 	int	max;
 
 	max = ft_lstlast(*a)->index;
 	while (ft_list_size(*b) > 0)
-	{
-		if ((*b)->index == (*a)->index - 1)
-			pa(a, b);
-		else if (ft_lstlast(*b)->index == (*a)->index - 1)
-		{
-			rrb(b, 1);
-			pa(a, b);
-		}
-		else if (ft_lstlast(*a)->index == max)
-		{
-			pa(a, b);
-			ra(a, 1);
-		}
-		else if (*b && ft_lstlast(*a)->index < (*b)->index)
-		{
-			pa(a, b);
-			ra(a, 1);
-		}
-		else if (*b && ft_lstlast(*a)->index < ft_lstlast(*b)->index)
-		{
-			rrb(b, 1);
-			pa(a, b);
-			ra(a, 1);
-		}
-		else if (ft_lstlast(*a)->index == (*a)->index - 1)
-			rra(a, 1);
-		else if (*b && search_for_index(*b, (*a)->index - 1))
-			rrb(b, 1);
-		else
-			rb(b, 1);
-	}
+		algo_norm(a, b, max);
 }

@@ -6,7 +6,7 @@
 /*   By: eel-alao <eel-alao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 23:37:29 by eel-alao          #+#    #+#             */
-/*   Updated: 2024/07/16 09:24:38 by eel-alao         ###   ########.fr       */
+/*   Updated: 2024/07/16 09:55:48 by eel-alao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,32 +76,6 @@ void	sort_4(t_stack **a, t_stack **b)
 	pa(a, b);
 }
 
-// void	sort_5(t_stack **a, t_stack **b)
-// {
-// 	int	i;
-// 	int	min;
-
-// 	i = -1;
-// 	while (++i < 2)
-// 	{
-// 		min = find_min(*a);
-// 		while ((*a)->n != min && i < 2)
-// 		{
-// 			if ((*a)->index == 1 && ++i)
-// 				pb(a, b);
-// 			if (is_up(*a, min))
-// 				ra(a, 1);
-// 			else
-// 				rra(a, 1);
-// 		}
-// 		pb(a, b);
-// 	}
-// 	if ((*b)->index == 0)
-// 		sb(b, 1);
-// 	sort_3(a);
-// 	pa(a, b);
-// 	pa(a, b);
-// }
 void	sort_5(t_stack **a, t_stack **b)
 {
 	while (ft_list_size(*b) != 2)
